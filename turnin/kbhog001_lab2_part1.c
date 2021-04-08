@@ -23,19 +23,19 @@ int main(void) {
     /* Insert your solution below */
     while (1) {
 	//read input
-	tmpA = PINA & 0x02;
+	tmpA = PINA & 0x03;
 	
 	if (tmpA == 0x00){
-		tmpB = 0; //sets tmpB to bbbbbb01
+		tmpB = 0x00; //sets tmpB to bbbbbb01
 	}
 	else if (tmpA == 0x01){
-		tmpB = 1; //sets tmpB to bbbbbb10
+		tmpB = 0x01; //sets tmpB to bbbbbb10
 	}
 	else if (tmpA == 0x02){
-		tmpB = 0;
+		tmpB = 0x00;
 	}
 	else if (tmpA == 0x03){
-		tmpB = 0;
+		tmpB = 0x00;
 	}
 	
 	PORTB = tmpB;
