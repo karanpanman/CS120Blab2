@@ -36,6 +36,13 @@ int main(void) {
 	tmpD = tmpA + tmpB + tmpC;
 	PORTD = tmpD >> 2;
 
+	if( ((tmpA - tmpC) > 80) || ((tmpA-tmpC) < -80)  ){
+                PORTD = PORTD | 0x02;
+        }
+        else {
+                PORTD = PORTD & 0xFD;
+        }
+	
 	if( tmpD > 140 ){
 		PORTD = PORTD | 0x01;
 	}
@@ -43,12 +50,7 @@ int main(void) {
 		PORTD = PORTD & 0xFE;
 	}
 	
-	if( (tmpA - tmpC) > 80){
-		PORTD = PORTD | 0x02;
-	}
-	else {
-		PORTD = PORTD & 0x0D;
-	}
+
 	
     }
 

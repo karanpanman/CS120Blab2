@@ -14,10 +14,18 @@
 # An example set of tests is shown below. It is important to note that these tests are not "unit tests" in 
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
-tests = [ {'description': 'PINA: 0x05, PINB:0x05, PINC: 0x05 => PORTC: 0x04',
-    'steps': [ {'inputs': [('PINA',0x05), ('PINB', 0x05), ('PINC', 0x05)], 'iterations': 5 } ],
-    'expected': [('PORTD',0x00)],
-    }
+tests = [ {'description': 'PINA: 0x40, PINB:0x40, PINC: 0x40 => PORTD: 0x31',
+    'steps': [ {'inputs': [('PINA',0x40), ('PINB', 0x40), ('PINC', 0x40)], 'iterations': 5 } ],
+    'expected': [('PORTD',0x31)],
+    },
+    {'description': 'PINA: 0x00, PINB:0x23, PINC: 0x55 => PORTD: 0x1E',
+    'steps': [ {'inputs': [('PINA',0x00), ('PINB', 0x23), ('PINC', 0x55)], 'iterations': 5 } ],
+    'expected': [('PORTD',0x1E)],
+    },
+    {'description': 'PINA: 0x00, PINB:0x38, PINC: 0x55 => PORTD: 0x22',
+    'steps': [ {'inputs': [('PINA',0x00), ('PINB', 0x38), ('PINC', 0x55)], 'iterations': 5 } ],
+    'expected': [('PORTD',0x22)],
+    },
    ]
 
 
